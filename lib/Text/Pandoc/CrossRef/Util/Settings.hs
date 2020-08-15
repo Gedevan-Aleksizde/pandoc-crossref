@@ -70,8 +70,8 @@ defaultMeta =
   <> tblLabels (MetaString "arabic")
   <> lstLabels (MetaString "arabic")
   <> secLabels (MetaString "arabic")
-  <> figureTitle (str "Figure")
-  <> tableTitle (str "Table")
+  <> figureTitle (str "-FIGURE-")
+  <> tableTitle (str "-TABLE-")
   <> listingTitle (str "Listing")
   <> titleDelim (str ":")
   <> chapDelim (str ".")
@@ -81,7 +81,7 @@ defaultMeta =
   <> refDelim (str "," <> space)
   <> figPrefix [str "fig.", str "figs."]
   <> eqnPrefix [str "eq." , str "eqns."]
-  <> tblPrefix [str "tbl.", str "tbls."]
+  <> tblPrefix [str "tbl.", str "tabs."]
   <> lstPrefix [str "lst.", str "lsts."]
   <> secPrefix [str "sec.", str "secs."]
   <> figPrefixTemplate (var "p" <> str "\160" <> var "i")

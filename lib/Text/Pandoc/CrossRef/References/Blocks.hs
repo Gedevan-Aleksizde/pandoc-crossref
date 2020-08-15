@@ -171,7 +171,7 @@ replaceBlock opts (Div (label,cls,attrs) images)
         setW as = ("width", "100%"):filter ((/="width") . fst) as
 replaceBlock opts (Div divOps@(label,_,attrs) [Table title align widths header cells])
   | not $ null title
-  , "tbl:" `T.isPrefixOf` label
+  , "tab:" `T.isPrefixOf` label
   = do
     idxStr <- replaceAttr opts (Right label) (lookup "label" attrs) title tblRefs
     let title' =
@@ -296,7 +296,7 @@ replaceSubfig _ x = return [x]
 divBlocks :: Block -> Block
 divBlocks (Table title align widths header cells)
   | not $ null title
-  , Just label <- getRefLabel "tbl" [last title]
+  , Just label <- getRefLabel "tab" [last title]
   = Div (label,[],[]) [Table (dropWhileEnd isSpace $ init title) align widths header cells]
 divBlocks x = x
 

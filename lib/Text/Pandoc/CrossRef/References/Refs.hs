@@ -70,7 +70,7 @@ replaceRefs _ x = return x
 accMap :: M.Map T.Text (Accessor References RefMap)
 accMap = M.fromList [("fig:",imgRefs)
                     ,("eq:" ,eqnRefs)
-                    ,("tbl:",tblRefs)
+                    ,("tab:",tblRefs)
                     ,("lst:",lstRefs)
                     ,("sec:",secRefs)
                     ]
@@ -79,7 +79,7 @@ accMap = M.fromList [("fig:",imgRefs)
 prefMap :: M.Map T.Text (Options -> Bool -> Int -> [Inline], Options -> Template)
 prefMap = M.fromList [("fig:",(figPrefix, figPrefixTemplate))
                      ,("eq:" ,(eqnPrefix, eqnPrefixTemplate))
-                     ,("tbl:",(tblPrefix, tblPrefixTemplate))
+                     ,("tab:",(tblPrefix, tblPrefixTemplate))
                      ,("lst:",(lstPrefix, lstPrefixTemplate))
                      ,("sec:",(secPrefix, secPrefixTemplate))
                      ]
